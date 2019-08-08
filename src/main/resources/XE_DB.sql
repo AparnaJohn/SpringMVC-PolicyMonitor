@@ -34,8 +34,8 @@ VALUES (1,'USER');
 INSERT INTO USER_PROFILE(id,type)
 VALUES (2,'ADMIN');
   
-INSERT INTO USER_PROFILE(id,type)
-VALUES (3,'DBA');
+/* INSERT INTO USER_PROFILE(id,type)
+VALUES (3,'DBA'); */
   
   
 /* Populate one Admin User which will further create other users for the application using GUI- abc125 */
@@ -74,7 +74,7 @@ CREATE TABLE APP_POLICY
   ENABLE 
 );
 
-insert into APP_POLICY values (190730001,'Health',200000,12000,sysdate,TO_DATE('30/07/2020','dd/mm/yyyy'),'Health insurance policy','sameer');
+/* insert into APP_POLICY values (190730001,'Health',200000,12000,sysdate,TO_DATE('30/07/2020','dd/mm/yyyy'),'Health insurance policy','sameer'); */
 
 CREATE TABLE APP_CLAIM 
 (
@@ -96,4 +96,4 @@ CREATE TABLE APP_CLAIM
   ENABLE 
 );
 
-insert into APP_CLAIM values (190730001,'Health',2000,0,sysdate,TO_DATE('30/07/2020','dd/mm/yyyy'),'Health insurance policy',190730001,'','NEW');
+/* insert into APP_CLAIM values (190730001,'Health',2000,0,sysdate,TO_DATE('30/07/2020','dd/mm/yyyy'),'Health insurance policy',190730001,'','NEW'); */

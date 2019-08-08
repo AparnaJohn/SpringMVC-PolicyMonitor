@@ -59,7 +59,7 @@ public class ClaimDaoImpl extends AbstractDao<Integer, Claim> implements ClaimDa
 	@Override
 	public int findTodayCount() throws ParseException {
 		Date date = new Date();
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 	    String myDate = formatter.format(date);
 	    // Create date 17-04-2011 - 00h00
 	    Date minDate = formatter.parse(myDate);

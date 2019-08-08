@@ -1,5 +1,5 @@
 <div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1 style="color: blue">EPRC Policy Application</h1>
+		<h1 style="color: blue">Online Policy Change Centre</h1>
 		<!--<p>Any Additional matter</p>-->
 		<div class="float-right">
 			<table>

@@ -2,6 +2,7 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <html>
 
@@ -15,7 +16,7 @@
 <body>
  	<div class="generic-container">
 		<div class="text-center" style="margin-bottom: 0">
-				<h1 style="color: blue">EPRC Policy Application</h1>
+				<h1 style="color: blue">Online Policy Change Centre</h1>
 			</div>
 		<div class="well lead">User Registration Form</div>
 	 	<form:form method="POST" modelAttribute="user" class="form-horizontal">
@@ -92,8 +93,22 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="userProfiles">Roles</label>
 					<div class="col-md-7">
+					
+				       <c:choose>
+						<c:when test="${edit}">
+						<sec:authorize access="hasRole('ADMIN')">
+						<form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm" /> </sec:authorize>
+						<sec:authorize access="hasRole('USER')">
+						<form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm" disabled="true"/></sec:authorize>
+						</c:when>
+						<c:otherwise>
 						<form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm" />
 						<div class="has-error">
+							<form:errors path="ssoId" class="help-inline"/>
+						</div>
+						</c:otherwise>
+					</c:choose>
+					<div class="has-error">
 							<form:errors path="userProfiles" class="help-inline"/>
 						</div>
 					</div>

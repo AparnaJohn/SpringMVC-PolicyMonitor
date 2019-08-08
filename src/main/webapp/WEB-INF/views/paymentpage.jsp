@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Register claim</title>
+<title>Payment Page</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -30,8 +30,22 @@
 	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script>
 	$(document).ready(function() {
-		
+		selectChange();
 	});
+	function selectChange(){
+	var pID = document.getElementById("policyId").value;
+	console.log(pID);
+	toggle('policyDiv', 'none', pID );
+	}
+	function toggle(className, displayState, divID){
+		var elements = document.getElementsByClassName(className);
+		for(var i=0; i< elements.length; i++){
+			elements[i].style.display = displayState;
+		}
+		if(divID != null){
+			toggle(divID, 'block', null );
+		}		
+	}
 </script>
 <style>
 .has-error{
@@ -51,14 +65,13 @@
 
 			</div>
 			<div class="col-sm-8">
-			<form:form method="POST" modelAttribute="policy" class="form-horizontal">
 			<input type="hidden" id="policyAmount" ></input>
-			
+			<form:form method="POST" modelAttribute="policy" class="form-horizontal">
 			<div class="row">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="policyId">Policies</label>
 					<div class="col-md-7">
-						<form:select path="policyId" items="${policies}" itemValue="policyId" itemLabel="policyType" class="form-control input-sm"  />
+						<form:select path="policyId" items="${policies}" itemValue="policyId" itemLabel="policyType" class="form-control input-sm" onChange = "selectChange()" />
 						<div class="has-error">
 							<form:errors path="policyId" class="help-inline"/>
 						</div>
@@ -70,12 +83,36 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="policyId">Payment Options</label>
 					<div class="col-md-7">
-						Still in progress.......
+						
 					</div>
 				</div>
 			</div>
-			
-		</form:form>
+			</form:form>
+			<c:forEach var="pol" items="${policies}">
+			<form:form method="POST" modelAttribute="policy" class="form-horizontal">
+			<div class="policyDiv <c:out value='${pol.policyId}' />">
+			<div class="row">
+					<label class="col-md-3 control-lable" for="policyId">policy Id</label>
+					<div class="col-md-7">
+						<form:input type="text" path="policyId" id="policyId" value="${pol.policyId}" class="form-control input-sm"/>
+					</div>
+			</div>
+	
+			<div class="row">
+					<label class="col-md-3 control-lable" for="policyAmount">policy Amount</label>
+					<div class="col-md-7">
+						<form:input type="text" path="policyAmount" id="policyAmount" value="${pol.policyAmount}" class="form-control input-sm"/>
+					</div>
+			</div>
+			<div class="row">
+								<div class="col-md-5"></div>
+					<div class="col-md-7">
+						<input type="submit" onClick="return false;" value="Payment"></input>
+					</div>
+			</div>
+			</div>
+			</form:form>			
+			</c:forEach>			
 
 
 			</div>
