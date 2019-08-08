@@ -71,7 +71,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="claimType">Claim Type</label>
 					<div class="col-md-7">
-						<form:input type="text" path="claimType" id="claimType" class="form-control input-sm"/>
+						<form:input type="text" path="claimType" required="true" id="claimType" class="form-control input-sm"/>
 						<div class="has-error">
 							<form:errors path="claimType" class="has-error"/>
 						</div>
@@ -83,7 +83,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="claimDescription">Claim Description</label>
 					<div class="col-md-7">
-						<form:input type="text" path="claimDescription" id="claimDescription" class="form-control input-sm" />
+						<form:input type="text" path="claimDescription" required="true" id="claimDescription" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="claimDescription" class="has-error"/>
 						</div>
@@ -95,7 +95,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="claimStartDate">Start Date</label>
 					<div class="col-md-7">
-						<form:input type="date" path="claimStartDate" id="claimStartDate" class="form-control input-sm" />
+						<form:input type="date" path="claimStartDate" required="true" id="claimStartDate" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="claimStartDate" class="has-error"/>
 						</div>
@@ -107,7 +107,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="claimEndDate">End Date</label>
 					<div class="col-md-7">
-						<form:input type="date" path="claimEndDate" id="claimEndDate" class="form-control input-sm" />
+						<form:input type="date" path="claimEndDate" required="true" id="claimEndDate" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="claimEndDate" class="has-error"/>
 						</div>
@@ -119,7 +119,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="claimAmount">Claim Amount</label>
 					<div class="col-md-7">
-						<form:input type="number" path="claimAmount" id="claimAmount" class="form-control input-sm"  />
+						<form:input type="number" path="claimAmount" required="true" id="claimAmount" class="form-control input-sm"  />
 						<div class="has-error">
 							<form:errors path="claimAmount" class="has-error"/>
 						</div>
@@ -131,7 +131,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="remarks">Remarks</label>
 					<div class="col-md-7">
-						<form:input type="text" path="remarks" id="remarks" class="form-control input-sm" />
+						<form:input type="text" path="remarks" required="true" id="remarks" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="remarks" class="has-error"/>
 						</div>
@@ -145,7 +145,7 @@
 						<c:when test="${edit}">
 						<label class="col-md-3 control-lable" for="status">Status</label>
 						<div class="col-md-7">
-						<form:input type="text" path="status" id="status" class="form-control input-sm" />
+						<form:input type="text" path="status" required="true" id="status" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="status" class="has-error"/>
 						</div>

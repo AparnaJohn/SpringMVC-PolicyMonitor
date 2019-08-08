@@ -59,7 +59,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="policyType">Policy Type</label>
 					<div class="col-md-7">
-						<form:input type="text" path="policyType" id="policyType" class="form-control input-sm"/>
+						<form:input type="text" path="policyType" id="policyType" required="true" class="form-control input-sm"/>
 						<div class="has-error">
 							<form:errors path="policyType" class="has-error"/>
 						</div>
@@ -71,7 +71,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="policyDescription">Policy Description</label>
 					<div class="col-md-7">
-						<form:input type="text" path="policyDescription" id="policyDescription" class="form-control input-sm" />
+						<form:input type="text" path="policyDescription" id="policyDescription" required="true" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="policyDescription" class="has-error"/>
 						</div>
@@ -83,7 +83,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="policyStartDate">Start Date</label>
 					<div class="col-md-7">
-						<form:input type="date" path="policyStartDate" id="policyStartDate" class="form-control input-sm" />
+						<form:input type="date" path="policyStartDate" id="policyStartDate" required="true" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="policyStartDate" class="has-error"/>
 						</div>
@@ -95,7 +95,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="policyEndDate">End Date</label>
 					<div class="col-md-7">
-						<form:input type="date" path="policyEndDate" id="policyEndDate" class="form-control input-sm" />
+						<form:input type="date" path="policyEndDate" id="policyEndDate" required="true" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="policyEndDate" class="has-error"/>
 						</div>
@@ -107,7 +107,7 @@
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="policyAmount">Policy Amount</label>
 					<div class="col-md-7">
-						<form:input type="number" path="policyAmount" id="policyAmount" class="form-control input-sm" />
+						<form:input type="number" path="policyAmount" id="policyAmount" required="true" class="form-control input-sm" />
 						<div class="has-error">
 							<form:errors path="policyAmount" class="has-error"/>
 						</div>
